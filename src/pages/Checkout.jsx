@@ -40,7 +40,7 @@ function Checkout() {
 
           try {
             const response = await axios.post(
-              "http://localhost:5000/api/orders",
+              "https://orangered-reindeer-587667.hostingersite.com/api/orders",
               orderData
             );
 
@@ -55,7 +55,8 @@ function Checkout() {
               .join("\n");
 
             const totalAmount = cart.reduce(
-              (total, item) => total + item.price,
+              (total, item) =>
+                total + item.price * item.quantity,
               0
             );
 
